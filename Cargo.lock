@@ -450,7 +450,7 @@ dependencies = [
  "env_logger",
  "iced-x86",
  "kvm-bindings",
- "kvm-ioctls",
+ "kvm-ioctls 0.13.0",
  "libc",
  "log",
  "mshv-bindings",
@@ -549,6 +549,17 @@ name = "kvm-ioctls"
 version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3a321cabd827642499c77e27314f388dd83a717a5ca716b86476fb947f73ae4"
+dependencies = [
+ "kvm-bindings",
+ "libc",
+ "vmm-sys-util",
+]
+
+[[package]]
+name = "kvm-ioctls"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b8f8dc9c1896e5f144ec5d07169bc29f39a047686d29585a91f30489abfaeb6b"
 dependencies = [
  "kvm-bindings",
  "libc",
@@ -1368,7 +1379,7 @@ source = "git+https://github.com/rust-vmm/vfio?branch=main#4d9c35ef3e5a3d15eeeb5
 dependencies = [
  "byteorder",
  "kvm-bindings",
- "kvm-ioctls",
+ "kvm-ioctls 0.12.0",
  "libc",
  "log",
  "mshv-bindings",
